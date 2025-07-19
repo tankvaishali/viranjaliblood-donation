@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function DonorList() {
+function DonorData() {
   const [donors, setDonors] = useState([]);
 
   useEffect(() => {
@@ -63,4 +63,4 @@ function DonorList() {
   );
 }
 
-export default DonorList;
+export default DonorData;
