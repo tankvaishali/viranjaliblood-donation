@@ -98,9 +98,26 @@ function DonorForm() {
               width={80}
             />
           </div>
-          <h2 className="text-center mb-4 text-danger fw-bold pt-4">BE DONOR</h2>
+          <h2 className="text-center  text-danger fw-bold ">BE A DONOR</h2>
         </div>
+<div className="row justify-content-center">
+  <div className="col-12 col-lg-4 ">
+    <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 pera fw-bold d-flex align-items-center justify-content-center">
+  <div className='py-2 py-lg-0'>
+      <div>૨૬ જુલાઈ, ૨૦૨૫</div>
+    <div>શનિવાર</div>
+  </div>
+    </div>
+  </div>
+  <div className="col-12 col-lg-4 mt-3 mt-lg-0">
+    <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 pera fw-bold ">
+    <div> સ્થળ : </div>
+    <div>સૌરાષ્ટ્ર પટેલ ભવન વાડી, મીની બજાર, લોક સમર્પણ રક્તદાન કેન્દ્રની સામે, નાના વરાછા, સુરત</div>
+    </div>
+  </div>
 
+
+</div>
         <form onSubmit={handleSubmit} noValidate>
           <div className="row g-0 g-lg-2 pera">
             {/* Name */}
