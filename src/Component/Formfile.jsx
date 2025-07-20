@@ -104,8 +104,12 @@ function DonorForm() {
   <div className="col-12 col-lg-4 ">
     <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 pera fw-bold d-flex align-items-center justify-content-center">
   <div className='py-2 py-lg-0'>
-      <div>૨૬ જુલાઈ, ૨૦૨૫</div>
-    <div>શનિવાર</div>
+      <div>૨૬
+
+જુલાઈ ૨૦૨૫, શનિવાર
+</div><div>
+સવારે ૭:૩૦ થી સાંજે ૫:૦૦ કલાક સુધી</div>
+    
   </div>
     </div>
   </div>
