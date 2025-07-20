@@ -7,8 +7,8 @@
   font-size: 15px !important;
 }
 
-.carouselhome {
-  background-image: url("https://t3.ftcdn.net/jpg/03/09/20/22/360_F_309202280_CgsWoCAdLBe9INBvdwBKUkpaLEP4XNLa.jpg");
+/* .carouselhome {
+  background-image: url("./assets/images/shared\ image\ \(3\).jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
+} */
 @keyframes floatUpDown {
   0% {
     transform: translateY(0px);
@@ -33,7 +33,7 @@
 .float-animation {
   animation: floatUpDown 3s ease-in-out infinite;
 }
-
+/* 
 
 .overlay {
   position: absolute;
@@ -41,12 +41,12 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, rgba(255, 0, 0, 0.454), rgba(255, 0, 0, 0)); /* soft red gradient */
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.454), rgba(255, 0, 0, 0)); 
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-left: 5%;
-}
+} */
 
 .content {
   z-index: 2;
