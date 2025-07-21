@@ -19,25 +19,17 @@ function DonorForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" })); // Clear error on change
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "please enter your name !";
-    if (!formData.phone) newErrors.phone = "please enter your mobile no.  !";
+    if (!formData.name.trim()) newErrors.name = "please enter your name!";
+    if (!formData.phone) newErrors.phone = "please enter your mobile no.!";
     else if (!/^[0-9]{10}$/.test(formData.phone))
-      newErrors.phone = "please enter your valid mobile number!";
-    if (!formData.dob) newErrors.dob = "please enter your birthday date  !";
-    if (!formData.age) newErrors.age = "please enter your age is !";
-    if (!formData.address.trim())
-      newErrors.address = "please enter your address !";
-    if (!formData.donationYears)
-      newErrors.donationYears = "please select your donation year !";
-    if (!formData.bloodGroup)
-      newErrors.bloodGroup = "please select your blood group !";
+      newErrors.phone = "please enter a valid 10-digit mobile number!";
     if (!formData.preferredTime)
-      newErrors.preferredTime = "please select time !";
+      newErrors.preferredTime = "please select a preferred time!";
     return newErrors;
   };
 
@@ -64,7 +56,7 @@ function DonorForm() {
         Swal.fire({
           icon: "success",
           title: "Success!",
-          text: "form submit successfully!",
+          text: "Form submitted successfully!",
         });
 
         setFormData({
@@ -106,11 +98,11 @@ function DonorForm() {
               width={80}
             />
           </div>
-          <h2 className="text-center  text-danger fw-bold ">BE A DONOR</h2>
+          <h2 className="text-center text-danger fw-bold">BE A DONOR</h2>
         </div>
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-4 ">
-            <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 pera fw-bold d-flex align-items-center justify-content-center">
+          <div className="col-12 col-lg-4">
+            <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 fw-bold d-flex align-items-center justify-content-center">
               <div className="py-2 py-lg-0">
                 <div>૨૬ જુલાઈ ૨૦૨૫, શનિવાર</div>
                 <div>સવારે ૭:૩૦ થી સાંજે ૫:૦૦ કલાક સુધી</div>
@@ -118,8 +110,8 @@ function DonorForm() {
             </div>
           </div>
           <div className="col-12 col-lg-4 mt-3 mt-lg-0">
-            <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 pera fw-bold ">
-              <div> સ્થળ : </div>
+            <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 fw-bold">
+              <div>સ્થળ :</div>
               <div>
                 સૌરાષ્ટ્ર પટેલ ભવન વાડી, મીની બજાર, લોક સમર્પણ રક્તદાન કેન્દ્રની
                 સામે, નાના વરાછા, સુરત
@@ -127,15 +119,16 @@ function DonorForm() {
             </div>
           </div>
         </div>
+
         <form onSubmit={handleSubmit} noValidate>
-          <div className="row g-0 g-lg-2 pera">
+          <div className="row g-0 g-lg-2">
             {/* Name */}
             <div className="col-md-6">
               <label className="form-label text-dark">રક્તદાતા નું નામ *</label>
               <input
                 type="text"
                 name="name"
-                className="form-control form-control-lg pera"
+                className="form-control form-control-lg"
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -148,9 +141,9 @@ function DonorForm() {
             <div className="col-md-6">
               <label className="form-label text-dark">મોબાઇલ નંબર *</label>
               <input
-                type="text"
+                type="tel"
                 name="phone"
-                className="form-control form-control-lg pera"
+                className="form-control form-control-lg"
                 value={formData.phone}
                 onChange={handleChange}
                 maxLength="10"
@@ -166,13 +159,10 @@ function DonorForm() {
               <input
                 type="date"
                 name="dob"
-                className="form-control form-control-lg pera"
+                className="form-control form-control-lg"
                 value={formData.dob}
                 onChange={handleChange}
               />
-              {errors.dob && (
-                <small className="text-danger">{errors.dob}</small>
-              )}
             </div>
 
             {/* Age */}
@@ -181,13 +171,10 @@ function DonorForm() {
               <input
                 type="number"
                 name="age"
-                className="form-control form-control-lg pera"
+                className="form-control form-control-lg"
                 value={formData.age}
                 onChange={handleChange}
               />
-              {errors.age && (
-                <small className="text-danger">{errors.age}</small>
-              )}
             </div>
 
             {/* Address */}
@@ -196,22 +183,19 @@ function DonorForm() {
               <input
                 type="text"
                 name="address"
-                className="form-control form-control-lg pera"
+                className="form-control form-control-lg"
                 value={formData.address}
                 onChange={handleChange}
               />
-              {errors.address && (
-                <small className="text-danger">{errors.address}</small>
-              )}
             </div>
 
             {/* Donation Years */}
             <div className="col-md-6 mt-0 mt-lg-3">
               <label className="form-label text-dark">
-                છેલ્લે ક્યારે રક્તદાન કર્યું હતું ? *
+                છેલ્લે ક્યારે રક્તદાન કર્યું હતું?
               </label>
               <select
-                className="form-select form-select-lg pera"
+                className="form-select form-select-lg"
                 name="donationYears"
                 value={formData.donationYears}
                 onChange={handleChange}
@@ -223,16 +207,13 @@ function DonorForm() {
                   </option>
                 ))}
               </select>
-              {errors.donationYears && (
-                <small className="text-danger">{errors.donationYears}</small>
-              )}
             </div>
 
             {/* Blood Group */}
             <div className="col-md-6">
-              <label className="form-label text-dark">બ્લડ ગ્રુપ *</label>
+              <label className="form-label text-dark">બ્લડ ગ્રુપ</label>
               <select
-                className="form-select form-select-lg pera"
+                className="form-select form-select-lg"
                 name="bloodGroup"
                 value={formData.bloodGroup}
                 onChange={handleChange}
@@ -246,9 +227,6 @@ function DonorForm() {
                   )
                 )}
               </select>
-              {errors.bloodGroup && (
-                <small className="text-danger">{errors.bloodGroup}</small>
-              )}
             </div>
 
             {/* Preferred Time */}
@@ -257,7 +235,7 @@ function DonorForm() {
                 રક્તદાન માટે અનુકૂળ સમય *
               </label>
               <select
-                className="form-select form-select-lg pera"
+                className="form-select form-select-lg"
                 name="preferredTime"
                 value={formData.preferredTime}
                 onChange={handleChange}
