@@ -42,23 +42,22 @@ function DonorForm() {
     }
 
     try {
-      const response = await fetch(
-        "https://viranjalibloodbackend.onrender.com/api/donor",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("https://viranjalibloodbackend.onrender.com/api/donor", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
+
       if (response.ok) {
         Swal.fire({
           icon: "success",
-          title: "Success!",
-          text: "Form submitted successfully!",
+          title: "સફળતા!",
+          text: "તમારું ફોર્મ સફળતાપૂર્વક મોકલાયું છે.",
         });
 
+        // Reset form
         setFormData({
           name: "",
           phone: "",
@@ -71,16 +70,27 @@ function DonorForm() {
         });
         setErrors({});
       } else {
-        Swal.fire({
-          icon: "error",
-          title: "Failed!",
-          text: "Something went wrong while sending data.",
-        });
+        const message = data.message || "કંઈક ખોટું થયું છે.";
+
+        // Check for duplicate phone number error
+        if (message.includes("already registered with this mobile number")) {
+          Swal.fire({
+            icon: "warning",
+            title: "મોબાઇલ નંબર પહેલેથી નોંધાયેલો છે!",
+            text: "આ નંબર સાથે પહેલેથી જ નોંધણી થઈ ચૂકી છે.",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "ભૂલ!",
+            text: message,
+          });
+        }
       }
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "Network Error",
+        title: "નેટવર્ક ભૂલ",
         text: error.message,
       });
     }
