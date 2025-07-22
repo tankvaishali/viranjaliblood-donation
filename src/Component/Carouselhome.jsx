@@ -5,7 +5,7 @@ function Carouselhome() {
   return (
     <>
     <div className='bannerimage'>
-      <img src={require("../assets/images/shared image (3).jpeg")} alt="" className='img-fluid w-100' />
+      <img src={require("../assets/images/viranjaliposter_image.jpeg")} alt="" className='img-fluid w-100' />
     </div>
     </>
     // <div className='carouselhome'>
