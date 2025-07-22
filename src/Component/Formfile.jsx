@@ -103,7 +103,7 @@ function DonorForm() {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-4">
             <div className="h-100 rounded-pill bg_imagesec text-white text-center p-2 fw-bold d-flex align-items-center justify-content-center">
-              <div className="py-2 py-lg-0">
+              <div className="py-3 py-lg-0">
                 <div>૨૬ જુલાઈ ૨૦૨૫, શનિવાર</div>
                 <div>સવારે ૭:૩૦ થી સાંજે ૫:૦૦ કલાક સુધી</div>
               </div>
@@ -121,7 +121,7 @@ function DonorForm() {
         </div>
 
         <form onSubmit={handleSubmit} noValidate>
-          <div className="row g-0 g-lg-2">
+          <div className="row g-0 g-lg-2 pera">
             {/* Name */}
             <div className="col-md-6">
               <label className="form-label text-dark">રક્તદાતા નું નામ *</label>
