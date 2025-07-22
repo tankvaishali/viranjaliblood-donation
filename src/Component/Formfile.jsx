@@ -53,8 +53,8 @@ function DonorForm() {
       if (response.ok) {
         Swal.fire({
           icon: "success",
-          title: "સફળતા!",
-          text: "તમારું ફોર્મ સફળતાપૂર્વક મોકલાયું છે.",
+          title: "success!",
+          text: "Your form has been submitted",
         });
 
         // Reset form
@@ -70,19 +70,19 @@ function DonorForm() {
         });
         setErrors({});
       } else {
-        const message = data.message || "કંઈક ખોટું થયું છે.";
+        const message = data.message || "Something Went Wrong";
 
         // Check for duplicate phone number error
         if (message.includes("already registered with this mobile number")) {
           Swal.fire({
             icon: "warning",
-            title: "મોબાઇલ નંબર પહેલેથી નોંધાયેલો છે!",
-            text: "આ નંબર સાથે પહેલેથી જ નોંધણી થઈ ચૂકી છે.",
+            title: " already registered",
+            text: "your mobile number already registered",
           });
         } else {
           Swal.fire({
             icon: "error",
-            title: "ભૂલ!",
+            title: "Error",
             text: message,
           });
         }
@@ -90,7 +90,7 @@ function DonorForm() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "નેટવર્ક ભૂલ",
+        title: "Network Error",
         text: error.message,
       });
     }
